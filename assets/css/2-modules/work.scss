@@ -1,0 +1,101 @@
+// WORK
+.gallery {
+  display: flex;
+  height: 100vh;
+
+  & > .panel:hover {
+    flex: 3;
+  }
+  @media screen and (max-width:750px) {
+    flex-direction: column;
+  }
+}
+
+.panel {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  align-self: auto;
+  padding: 0 5vw;
+  overflow: hidden;
+  transition: all .7s ease-out;
+
+  p {
+    color: lighten(black, 20%);
+  }
+}
+
+.btn-our-work {
+  // background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  // color: white;
+}
+
+/* Panel Contants */
+.panel-left {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  background-image: linear-gradient(120deg, rgba(#a6c0fe, .7) 0%, rgba(#f68084, .7) 100%), url('https://source.unsplash.com/0ZcugRpeyBU/1600x900');
+  background-position: left center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .info {
+    display: none;
+    z-index: 3;
+    transition: all .1s ease-in;
+  }
+  &:hover {
+    .info {
+      display: block;
+      animation: slide1 .75s ease-out;
+    }
+  }
+}
+
+.panel-right {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  background-image: linear-gradient(to top, rgba(#fbc2eb, .7) 0%, rgba(#a6c1ee, .7) 100%),  url('https://source.unsplash.com/p7v6X41PP4w/1600x900');
+  background-position: left center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .info {
+    display: none;
+    z-index: 3;
+    transition: all .1s ease-in;
+  }
+  &:hover {
+    .info {
+      display: block;
+      animation: slide2 .75s ease-out;
+    }
+  }
+}
+
+/* ANIMATION & MEDIA */
+@keyframes slide1 {
+  from {
+    transform: translateX(-50vw);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide2 {
+  from {
+    transform: translateX(50vw);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
