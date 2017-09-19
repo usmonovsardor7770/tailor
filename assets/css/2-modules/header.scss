@@ -9,18 +9,18 @@ header {
   background-size: cover;
 
   .content {
-    color: white;
+    align-items: flex-start;
+    color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin-left: 20vw;
-    height: 100%;
     font-size: 1.25rem;
+    height: 100%;
+    justify-content: center;
+    margin-left: 20vw;
     p {
-      color: white;
+      color: #ffffff;
       font-size: .85em;
-      padding: .75em 0 .75em 0;
+      padding: .75em 0;
     }
 
     .btn-contact {
@@ -34,13 +34,13 @@ header {
 }
 
 nav {
-  position: fixed;
+  align-items: center;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
   height: 5em;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
 
   a.nav-link {
     color: white;
