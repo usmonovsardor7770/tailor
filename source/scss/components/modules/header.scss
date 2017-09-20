@@ -1,0 +1,60 @@
+header {
+  height: 88vh;
+  overflow: hidden;
+  width: 100vw;
+}
+
+img {
+  display: block;
+  height: 85vh;
+  object-fit: cover;
+  width: 100%;
+
+  @media screen and (min-width: 750px){
+    height: 100vh;
+  }
+}
+
+h1, h2 {
+  color: $white;
+  left: 10vw;
+  position: absolute;
+  z-index: 2;
+}
+
+h1 {
+  top: 57vh;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+h2 {
+  top: 65vh;
+  font-size: 1.35em;
+  line-height: 1.5em;
+  font-weight: 300;
+}
+// CUSTOM GLIDE JS BUTTONS
+
+.glide__arrow {
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+.glide__bullet {
+  border: 0;
+  border-radius: 0;
+  height: 0.2em;
+  width: 2em;
+}
+
+.glide__bullets > *.active {
+  width: 3.5em;
+}
+
+.glide__bullets > *:focus,
+.glide__bullets > *:hover {
+  background-color: rgba($white, .9);
+  border: 0;
+}
