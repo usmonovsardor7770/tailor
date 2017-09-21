@@ -1,67 +1,151 @@
+//Nav
 nav {
+  position: fixed;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  justify-content: space-around;
-  position: fixed;
+  justify-content: space-between;
   height: 5em;
   width: 100%;
   z-index: 2;
+  padding: 0 1em;
+  font-size: .95em;
   transition: all 400ms ease-out;
 
-  &.fixed {
-    background-color: $white;
+  a {
+    color: white;
+    font-size: 1.5em;
+    padding: 0.25em .5em;
+    float: left;
+    position: relative;
 
-    .logo {
-      color: $navy;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      height: 3px;
+      width: 0;
+      background: transparent;
+      transition: width .5s ease, background-color .5s ease, left .5s ease;
+    }
+    &:hover:after {
+      width: 100%;
+      left: 0;
+      background: white;
     }
   }
   .logo {
     color: $white;
     font-size: 1.75em;
   }
-  @media screen and (min-width: 750){
+
+  // Fixed Nav
+  &.fixed {
+    background-color: $white;
+
+    a {
+      color: $navy;
+
+      &:hover:after {
+        background-color: $navy;
+      }
+    }
+    .overlay-content > a {
+      color: $white;
+    }
+    .logo {
+      color: $navy;
+    }
+    .hamburger span:after, .hamburger span:before {
+      background-color: $navy;
+    }
   }
 }
 
+.nav-link {
+  @media screen and (max-width: 770px) {
+    display: none;
+  }
+}
 
+.overlay {
+  position: fixed;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  background: $black;
+  z-index: 5;
+  visibility: hidden;
+  overflow: hidden;
+  transition: height 400ms ease-in-out;
+
+  &.active {
+    opacity: .9;
+    visibility: visible;
+    height: 100%;
+    font-size: 1.7em;
+
+    .overlay-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      a {
+        padding: .25em 0;
+      }
+    }
+  }
+}
+
+// HAMBURGER
 .menu-toggle {
-  flex: 0 0  auto;
+  flex: 0 0 auto;
   width: 40px;
   height: 40px;
   cursor: pointer;
   position: relative;
   padding-left: auto;
+
+  &.active {
+    z-index: 10;
+  }
+  @media screen and (min-width: 771px) {
+    display: none;
+  }
 }
 
-.cross,
-.hamburger {
+.cross, .hamburger {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
 .hamburger span {
   display: block;
-  width: 18px;
-  height: 2px;
-  margin-bottom: 3px;
+  width: 36px;
+  height: 4px;
+  margin-bottom: 6px;
   overflow: hidden;
   position: relative;
+  &:last-child {
+    margin: 0;
+  }
 }
 
-.hamburger span:last-child {
-  margin: 0;
-}
-
-.hamburger span:after,
-.hamburger span:before {
+.hamburger span:after, .hamburger span:before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: $white;
+  background-color: white;
   transform: translateX(-200%);
   transition: transform ease 300ms;
 }
@@ -70,13 +154,11 @@ nav {
   transform: translateX(0);
 }
 
-.hamburger span:nth-child(2):after,
-.hamburger span:nth-child(2):before {
+.hamburger span:nth-child(2):after, .hamburger span:nth-child(2):before {
   transition-delay: 75ms;
 }
 
-.hamburger span:last-child:after,
-.hamburger span:last-child:before {
+.hamburger span:last-child:after, .hamburger span:last-child:before {
   transition-delay: 150ms;
 }
 
@@ -98,9 +180,9 @@ nav {
 
 .cross span {
   display: block;
-  width: 18px;
-  height: 2px;
-  background-color: $white;
+  width: 36px;
+  height: 4px;
+  background-color: white;
   transform: translateY(50%) rotate(45deg) scaleX(0);
   transition: transform ease 200ms;
 }

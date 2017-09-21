@@ -56,7 +56,7 @@ gulp.task('browserSync', function() {
 });
 
 
-// WATCH
+// Watch
 gulp.task('watch', ['browserSync', 'sass', 'js'], () =>{
   gulp.watch('source/scss/**/*.scss', ['sass']);
   gulp.watch('source/javascript/*.js', ['js']);
@@ -65,4 +65,4 @@ gulp.task('watch', ['browserSync', 'sass', 'js'], () =>{
 
 
 // Default
-gulp.task('default', ['js','sass']);
+gulp.task('default', ['sass', 'js']);
