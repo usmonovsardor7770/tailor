@@ -1,65 +1,40 @@
+$gradient: linear-gradient(200deg, rgba(black, .2) 0%, rgba(black, .7) 100%);
+
+
 header {
-  height: 88vh;
-  overflow: hidden;
-  width: 100vw;
-}
-
-img {
-  display: block;
-  height: 85vh;
-  object-fit: cover;
+  position: relative;
+  height: 100vh;
   width: 100%;
+  background: $gradient, url('https://static.pexels.com/photos/20891/pexels-photo.jpg') no-repeat 70%;
+  background-size: cover;
 
-  @media screen and (min-width: $tablet){
-    height: 100vh;
+  .content {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    margin-right: 2em;
+    font-size: 1.75em;
+    color: white;
+    float: left;
+
+    h1 {
+      font-size: 2em;
+      padding-bottom: .2em;
+      font-weight: bold;
+    }
+    h2 {
+      color: gray;
+      font-size: .8em;
+      font-weight: 300;
+    }
+
+    @media screen and (max-width: 750px){
+      h1 {
+        font-size: calc(1.7em + 1vw);
+      }
+      h2 {
+        font-size: calc(.55em + 1vw);
+      }
+    }
   }
-}
-
-h1, h2 {
-  color: $white;
-  left: 10vw;
-  position: absolute;
-  z-index: 1;
-}
-
-h1 {
-  top: 57vh;
-  font-size: 3em;
-  font-weight: bold;
-}
-
-h2 {
-  top: 65vh;
-  font-size: 1.35em;
-  line-height: 1.5em;
-  font-weight: 300;
-}
-// CUSTOM GLIDE JS BUTTONS
-
-.glide__arrow {
-  border: 0;
-  padding: 0;
-  border-radius: 0;
-  z-index: 1;
-}
-
-.glide__bullet {
-  border: 0;
-  border-radius: 0;
-  height: 0.2em;
-  width: 2em;
-}
-
-.glide__bullets {
-  z-index: 1;
-}
-
-.glide__bullets > *.active {
-  width: 3.5em;
-}
-
-.glide__bullets > *:focus,
-.glide__bullets > *:hover {
-  background-color: rgba($white, .9);
-  border: 0;
 }
