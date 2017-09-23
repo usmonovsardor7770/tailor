@@ -1,25 +1,12 @@
 #features {
-  min-height: 100vh;
-  width: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  padding: 2em 0;
 
-  hr {
-    text-align: center;
-    width: 90%;
-    margin: 0 auto;
-    background-color: $navy;
-  }
-
-  .about {
-    padding: 1.25em .5em;
-    font-size: 1.5em;
-    font-weight: 300;
-    text-align: center;
-    color: rgba($black, .7);
-    line-height: 1.55em;
+  &:not(){
+    min-height: 100vh;
   }
 
   .steps {
@@ -44,14 +31,13 @@
         flex: 1 1 320px;
         position: relative;
         color: #363636;
-        text-decoration: none;
         padding: 1em .35em;
 
         .card-header {
           position: relative;
-          height: 20em;
+          height: 25em;
           overflow: hidden;
-          background: url('https://source.unsplash.com/800x600/?desk') no-repeat center center;
+          background: url('https://source.unsplash.com/800x600/?table') no-repeat center center;
           background-size: cover;
           background-color: rgba(white, .17);
           background-blend-mode: overlay;
@@ -61,8 +47,11 @@
           &:hover {
             background-color: rgba(white, 0);
           }
-        }
 
+          @media screen and (max-width: $mobile){
+            height: 15em;
+          }
+        }
         .card-info {
           padding: 1em 1em 0;
           text-align: center;

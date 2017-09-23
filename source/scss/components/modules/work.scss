@@ -1,0 +1,99 @@
+#work {
+  position: relative;
+  padding: 1em 0;
+
+  h1 {
+    color: rgba($white, .9);
+    font-family: $sans-serif;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    word-spacing: .05em;
+    font-size: calc(2.6em + 1vw);
+  }
+  h2 {
+    color: rgba($white, .5);
+    font-family: $sans-serif;
+    font-weight: 300;
+    letter-spacing: .01em;
+    font-size: calc(1.45em + 1vw);
+    text-transform: uppercase;
+    line-height: 1em;
+    margin-top: .55em;
+  }
+  p {
+    margin: 0 auto;
+    padding: 2em 1em;
+    max-width: 600px;
+    font-weight: 300;
+    line-height: 1.5em;
+    padding: 4em 0;
+    text-align: center;
+    letter-spacing: .02em;
+    word-spacing: .15em;
+  }
+  header {
+    height: 45vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-color: rgba($black, .7);
+    background-blend-mode: overlay;
+    background-attachment: scroll;
+
+    @media screen and (max-width: $mobile){
+      height: 25vh;
+    }
+  }
+  .images {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .card {
+      flex: 1 0 320px;
+      min-height: 40vh;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      margin: 1em;
+    }
+    .card-bottom {
+      flex: 1 0 650px;
+      min-height: 70vh;
+      margin-bottom: 5em;
+    }
+  }
+  .curtains{
+    header {
+      background-image: url('https://source.unsplash.com/800x600/?curtains');
+    }
+    .images .card {
+      background-image: url('https://source.unsplash.com/800x600/?curtains');
+    }
+  }
+  .dresses {
+    header {
+      background-image: url('https://source.unsplash.com/1600x900/?dresses');
+    }
+    .images .card {
+      background-image: url('https://source.unsplash.com/1600x900/?dresses');
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    h1 {
+      font-size: 1.6em ;
+    }
+    h2 {
+      font-size: 1em;
+    }
+  }
+}
