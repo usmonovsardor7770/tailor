@@ -8,7 +8,7 @@ nav {
   height: 5em;
   width: 100%;
   z-index: 2;
-  padding: 0 1em;
+  padding: 0 1.5em;
   font-size: .95em;
   transition: all 400ms ease-out;
 
@@ -20,22 +20,10 @@ nav {
     margin: 0 .4em;
     float: left;
     position: relative;
+    transition: all 300ms ease-in-out;
 
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      height: 2.5px;
-      width: 0;
-      background: transparent;
-      transition: width .5s ease, background-color .5s ease, left .5s ease;
-    }
-    &:hover:after {
-      width: 100%;
-      left: 0;
-      background: white;
+    &:hover {
+      color: rgba($white, .5);
     }
   }
   .logo {
@@ -43,33 +31,32 @@ nav {
     font-size: 2em;
     font-weight: normal;
     cursor: pointer;
-    padding-left: .75em ;
   }
 
   // Fixed Nav
   &.fixed {
-    background-color: $white;
+    background-color: rgba($white, .95);
 
     a {
-      color: $navy;
+      color: $black;
 
-      &:hover:after {
-        background-color: $navy;
+      &:hover {
+        color: rgba($black, .5);
       }
     }
     .overlay-content > a {
       color: $white;
-
-      &:hover:after {
-        background-color: $white;
-      }
     }
     .logo {
-      color: $navy;
+      color: $black;
     }
     .hamburger span:after, .hamburger span:before {
-      background-color: $navy;
+      background-color: $black;
     }
+  }
+
+  @media screen and (min-width: 1020px){
+    padding: 0 calc(5vw + 5em);
   }
 }
 
@@ -96,7 +83,7 @@ nav {
   transition: height 400ms ease-in-out;
 
   &.active {
-    opacity: .9;
+    opacity: .95;
     visibility: visible;
     height: 100%;
     font-size: 1.7em;

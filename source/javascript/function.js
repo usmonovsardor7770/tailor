@@ -30,6 +30,11 @@ $(document).ready(function() {
     $(".menu-toggle, .overlay").removeClass("active");
   });
 
+  // Dynamic Year for footer
+  var d = new Date();
+  var n = d.getFullYear();
+  document.getElementById("year").innerHTML = n;
+  
   // Scroll on click the nav link
   $('a[href*="#"]')
     // Remove links that don't actually link to anything
@@ -39,20 +44,19 @@ $(document).ready(function() {
       // On-page links
       if (
         location.pathname.replace(/^\//, "") ==
-          this.pathname.replace(/^\//, "") &&
+        this.pathname.replace(/^\//, "") &&
         location.hostname == this.hostname
       ) {
         // Figure out element to scroll to
         var target = $(this.hash);
-        target = target.length
-          ? target
-          : $("[name=" + this.hash.slice(1) + "]");
+        target = target.length ?
+          target :
+          $("[name=" + this.hash.slice(1) + "]");
         // Does a scroll target exist?
         if (target.length) {
           // Only prevent default if animation is actually gonna happen
           event.preventDefault();
-          $("html, body").animate(
-            {
+          $("html, body").animate({
               scrollTop: target.offset().top
             },
             1000,

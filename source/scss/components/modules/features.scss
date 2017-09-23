@@ -1,0 +1,88 @@
+#features {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  hr {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    background-color: $navy;
+  }
+
+  .about {
+    padding: 1.25em .5em;
+    font-size: 1.5em;
+    font-weight: 300;
+    text-align: center;
+    color: rgba($black, .7);
+    line-height: 1.55em;
+  }
+
+  .steps {
+    margin: 0 auto;
+    padding: 2em 1em;
+    max-width: 1600px;
+
+    h1 {
+      text-align: center;
+      padding-bottom: 1em;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+
+      .card {
+        flex: 1 1 320px;
+        position: relative;
+        color: #363636;
+        text-decoration: none;
+        padding: 1em .35em;
+
+        .card-header {
+          position: relative;
+          height: 20em;
+          overflow: hidden;
+          background: url('https://source.unsplash.com/800x600/?desk') no-repeat center center;
+          background-size: cover;
+          background-color: rgba(white, .17);
+          background-blend-mode: overlay;
+          transition: background-color 400ms ease-in-out;
+
+          &:focus,
+          &:hover {
+            background-color: rgba(white, 0);
+          }
+        }
+
+        .card-info {
+          padding: 1em 1em 0;
+          text-align: center;
+
+          h1 {
+            text-align: center;
+            padding: 0.5em 0;
+            font-weight: 400;
+            letter-spacing: .15em;
+            line-height: 1em;
+            text-transform: uppercase;
+          }
+
+          p {
+            line-height: 1.75em;
+            font-weight: 300;
+            letter-spacing: .07em
+          }
+        }
+      }
+    }
+  }
+}

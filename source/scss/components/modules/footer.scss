@@ -1,0 +1,25 @@
+footer {
+  background: $black;
+  text-align: center;
+  padding: 2em 0;
+  color: rgba($white, .5);
+  background: url('https://source.unsplash.com/1600x900/?desk') no-repeat center center;
+  background-size: cover;
+  background-color: rgba($black, .8);
+  background-blend-mode: overlay;
+
+  .heart {
+    color: rgba($white, .8);
+  }
+  a {
+    color: rgba($white, .5);
+
+    &:hover {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+  p:nth-of-type(1) {
+    padding: 1em 0;
+  }
+}
