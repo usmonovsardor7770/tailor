@@ -40,7 +40,7 @@ $(document).ready(function() {
 
       $('html, body').animate({
         scrollTop: $(hash).offset().top
-      }, 1000, function(){
+      }, 1000, function() {
 
         window.location.hash = hash;
       });
@@ -48,5 +48,14 @@ $(document).ready(function() {
   });
 
   // Gallery
-    pageAccelerator();
+  pageAccelerator();
+
+  // Testimonials
+  function fade($ele) {
+    $ele.fadeIn(1000).delay(3000).fadeOut(1000, function() {
+      var $next = $(this).next('.quote');
+      fade($next.length > 0 ? $next : $(this).parent().children().first());
+    });
+  }
+  fade($('.quoteLoop > .quote').first());
 });
