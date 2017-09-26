@@ -60,10 +60,17 @@
     .card {
       flex: 1 0 320px;
       min-height: 40vh;
+      background-color: rgba($black, .1);
+      background-blend-mode: overlay;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
       margin: 1em;
+      transition: background-color 300ms ease-in-out;
+
+      &:hover {
+        background-color: rgba($black, 0);
+      }
     }
     .card-bottom {
       min-height: 60vh;
@@ -74,18 +81,30 @@
   }
   .curtains{
     header {
-      background-image: url('https://source.unsplash.com/800x600/?curtains');
+      background-image: url('/public/img/curtains3.jpg');
     }
-    .images .card {
-      background-image: url('https://source.unsplash.com/800x600/?curtains');
+    .card-one {
+      background-image: url('/public/img/curtains1.jpg');
+    }
+    .card-two {
+      background-image: url('/public/img/curtains2.jpg');
+    }
+    .card-bottom {
+      background-image: url('/public/img/curtains3.jpg');
     }
   }
   .dresses {
     header {
-      background-image: url('https://source.unsplash.com/1600x900/?dresses');
+      background-image: url('/public/img/dresses3.jpg');
     }
-    .images .card {
-      background-image: url('https://source.unsplash.com/1600x900/?dresses');
+    .card-one {
+      background-image: url('/public/img/dresses1.jpeg');
+    }
+    .card-two {
+      background-image: url('/public/img/dresses2.jpeg');
+    }
+    .card-bottom {
+      background-image: url('/public/img/dresses3.jpg');
     }
   }
 

@@ -1,29 +1,28 @@
 #testimonials {
   padding-bottom: 1em;
-  min-height: 25vh;
   background: rgba($gray, .35);
+  padding: 100px 0;
 
   .quoteLoop {
     height: auto;
     max-width: 800px;
     position: relative;
     margin: 0 auto;
-    padding: 2em 0;
 
     .quote {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
+      display: none;
+      top: 0;
       text-align: center;
+      height: inherit;
       margin: auto 0;
       padding: 0 2em;
 
       img {
         border-radius: 50%;
-        float: left;
       }
       .text {
-        padding: 2em 0;
+        padding: 2.25em 0;
+
         h4 {
           font-size: 2em;
           color: rgba($black, .8);
@@ -31,7 +30,7 @@
         h5 {
           font-size: 1.25em;
           font-weight: 300;
-          padding: 1em 0;
+          padding: 1.5em 0;
         }
       }
       @media screen and (max-width: $mobile){

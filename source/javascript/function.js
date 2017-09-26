@@ -47,7 +47,7 @@ $(document).ready(function() {
     }
   });
 
-  // Gallery
+  // Page Load
   pageAccelerator();
 
   // Testimonials
@@ -58,4 +58,6 @@ $(document).ready(function() {
     });
   }
   fade($('.quoteLoop > .quote').first());
+
+  //
 });

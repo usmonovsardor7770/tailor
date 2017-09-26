@@ -37,7 +37,6 @@
           position: relative;
           height: 25em;
           overflow: hidden;
-          background: url('https://source.unsplash.com/800x600/?table') no-repeat center center;
           background-size: cover;
           background-color: rgba(white, .17);
           background-blend-mode: overlay;
@@ -74,4 +73,16 @@
       }
     }
   }
+}
+
+.step-one {
+  background: url('/public/img/steps1.jpg') no-repeat center center;
+}
+
+.step-two {
+  background: url('/public/img/steps2.jpg') no-repeat center center;
+}
+
+.step-three {
+  background: url('/public/img/steps3.jpg') no-repeat center center;
 }

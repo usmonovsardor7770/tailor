@@ -10,7 +10,8 @@ const
    browserSync          = require('browser-sync').create();
 
 
-// HTML
+
+// HTML Watch
 gulp.task('html', function(){
   return  gulp.src('*.html')
       .pipe(gulp.dest(''))
@@ -46,6 +47,16 @@ gulp.task('js', function(){
 });
 
 
+// IMG Optimization
+gulp.task('img', function(){
+  return  gulp.src('source/img/**/*')
+      .pipe(gulp.dest('public/img'))
+      .pipe(browserSync.reload({
+         stream: true
+      }));
+})
+
+
 // Browser Sync
 gulp.task('browserSync', function() {
     browserSync.init(["source/scss/*.scss", "source/javascript/*.js"], {
@@ -57,7 +68,7 @@ gulp.task('browserSync', function() {
 
 
 // Watch
-gulp.task('watch', ['browserSync', 'sass', 'js'], () =>{
+gulp.task('watch', ['browserSync', 'sass', 'js', 'img'], () =>{
   gulp.watch('source/scss/**/*.scss', ['sass']);
   gulp.watch('source/javascript/*.js', ['js']);
   gulp.watch('*.html', ['html']);
