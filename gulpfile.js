@@ -76,4 +76,4 @@ gulp.task('watch', ['browserSync', 'sass', 'js', 'img'], () =>{
 
 
 // Default
-gulp.task('default', ['sass', 'js']);
+gulp.task('default', ['sass', 'js', 'img']);
