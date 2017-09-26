@@ -5,12 +5,13 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  outline: none;
   padding: 0;
+  outline: none;
 }
 
 body {
   font-family: 'Lora', serif;
+  background-color: $white;
 }
 
 a {
