@@ -1,8 +1,6 @@
 $(document).ready(function() {
 
-  $(window).load(function() {
-    $(".load").fadeOut("slow");
-  });
+  $('.loader').addClass('loaded').fadeOut();
   // Nav on scroll stick
   $(window).scroll(function() {
     // If we have scrolled more than 10px
@@ -62,16 +60,3 @@ $(document).ready(function() {
 
   //
 });
-
-// document.onreadystatechange = function () {
-//   var state = document.readyState
-//   if (state == 'interactive') {
-//        document.getElementById('site').style.visibility="hidden";
-//   } else if (state == 'complete') {
-//       setTimeout(function(){
-//          document.getElementById('interactive');
-//          document.getElementById('load').style.visibility="hidden";
-//          document.getElementById('site').style.visibility="visible";
-//       },500);
-//   }
-// }
