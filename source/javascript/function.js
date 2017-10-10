@@ -1,6 +1,11 @@
 $(document).ready(function() {
 
   $('.loader').addClass('loaded').fadeOut();
+
+  $(function() {
+    $('body').fadeIn(500);
+  });
+
   // Nav on scroll stick
   $(window).scroll(function() {
     // If we have scrolled more than 10px
